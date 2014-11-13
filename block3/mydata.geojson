@@ -1,0 +1,31 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Andreas Hocevar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.3916015625,
+          48.21735290928554
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Emil Buchberger"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.321378648281097,
+          48.218378736730486
+        ]
+      }
+    }
+  ]
+}
