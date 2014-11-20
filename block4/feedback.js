@@ -15,7 +15,7 @@ function submitForm() {
     feature.setGeometryName('geom');
     feature.setGeometry(new ol.geom.Point(position));
   }
-  feature.set('f_name', form.namensfeld.value);
+  feature.set('f_name', form.name.value);
   feature.set('f_mail', form.email.value);
   for (var i = form.geschlecht.length - 1; i >= 0; --i) {
     if (form.geschlecht[i].checked) {
