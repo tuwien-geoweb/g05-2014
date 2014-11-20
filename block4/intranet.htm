@@ -5,6 +5,8 @@
 	<meta name="description" content="Webseite zur VU Geoweb 2014 (TU Wien)" />
 	<meta name="keywords" content="GIS, PHP, Javascript, CSS, Übung" />
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="http://student.ifip.tuwien.ac.at/geoweb/2014/g05/page/css/stylesheet.css" />
 	<style>
       		.map {
@@ -33,6 +35,8 @@
 </div>
 
 <div id="content">
+<div class="row">
+  <div class="col-md-6">
 <h2>Interner Bereich Gruppe 05</h2>
 <p>Diese Seiten können nur durch die Mitglieder des Kreis des Vertrauens &copy; genutzt werden.</p>
 
@@ -69,10 +73,10 @@
 	featureType = "feedback";
 	featureNS = "http://geoweb/2014/g05";
 </script>
+.col-md-6</div>
 
-<div class="clear"> </div>
-
-<div id="map" class="map"></div>
+  <div class="col-md-6">
+  <div id="map" class="map"></div>
     <script type="text/javascript">
       var map = new ol.Map({
         target: 'map',
@@ -94,8 +98,11 @@
         })
       });
     </script>
+    </div>
+</div>
 
 </div>
+<div class="clear"> </div>
 
 <div id="menu">
 
