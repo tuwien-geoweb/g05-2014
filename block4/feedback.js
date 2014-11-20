@@ -1,5 +1,5 @@
 var featureType, featureNS;
-var form = document.forms[1];
+var form = document.forms[0];
 var geolocation = new ol.Geolocation({
   projection: 'EPSG:4326'
 });
