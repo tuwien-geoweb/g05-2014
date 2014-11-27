@@ -61,10 +61,10 @@ geolocation.on('change:position', function() {
   // map.getView().fitExtent(AccuracyExtent, map.getSize());
   console.log("Geometry Accuracy: " + geolocation.getAccuracy());
   
-  var vector = new OpenLayers.Layer.Vector('vector');
-  var circle = new OpenLayers.Feature.Vector(
-        OpenLayers.Geometry.Polygon.createRegularPolygon(
-            new OpenLayers.Geometry.Point(e.point.x, e.point.y),
+  var vector = new ol.Layer.Vector('vector');
+  var circle = new ol.Feature.Vector(
+        ol.Geometry.Polygon.createRegularPolygon(
+            new ol.Geometry.Point(e.point.x, e.point.y),
             e.position.coords.accuracy,
             40,
             0
