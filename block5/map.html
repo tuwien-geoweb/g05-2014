@@ -52,7 +52,7 @@ geolocation.on('change:position', function() {
  var form = document.getElementById("search");
  
  form.onsubmit = function(evt) {
-   evt.prevent.Default();
+   evt.preventDefault();
    var url = 'http://nominatim.openstreetmap.org/search?format=json&q=' + form.query.value;
    var xhr = new XMLHttpRequest();
    xhr.open("GET", url, true);
