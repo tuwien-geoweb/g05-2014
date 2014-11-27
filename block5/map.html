@@ -59,7 +59,7 @@ geolocation.on('change:position', function() {
   marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
   // var AccuracyExtent = new ol.geom.Geometry(geolocation.getAccuracy).getExtent();
   // map.getView().fitExtent(AccuracyExtent, map.getSize());
-  console.log("Geometry Accuracy: " + geolocation.accuracy);
+  console.log("Geometry Accuracy: " + geolocation.getAccuracy());
   
   var accuracyFeature = new ol.Feature();
   accuracyFeature.bindTo('geometry', geolocation, 'accuracyGeometry');
