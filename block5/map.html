@@ -74,7 +74,7 @@ geolocation.on('change:position', function() {
       parseFloat(bbox[2]), parseFloat(bbox[0]), 
       parseFloat(bbox[3]), parseFloat(bbox[1])
       ];
-    console.log("result.display_name");
+    console.log(result.display_name());
     map.getView().fitExtent(ol.proj.transformExtent(extent, 'EPSG:4326', 'EPSG:3857'), map.getSize());
 };
 xhr.send();
