@@ -68,7 +68,7 @@ geolocation.on('change:position', function() {
   positionFeature.bindTo('geometry', geolocation, 'position')
     .transform(function() {}, function(coordinates) {
       return coordinates ? new ol.geom.Point(coordinates) : null;
-    });
+    }});
 
   var featuresOverlay = new ol.FeatureOverlay({
   map: map,
