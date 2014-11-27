@@ -59,7 +59,21 @@ geolocation.on('change:position', function() {
   marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
   var AccuracyExtent = new ol.geom.Geometry(geolocation.getAccuracy).getExtent();
   map.getView().fitExtent(AccuracyExtent, map.getSize());
-  console.log("Geometry Accuracy: " + geolocation.accuracy)
+  console.log("Geometry Accuracy: " + geolocation.accuracy);
+  
+  var accuracyFeature = new ol.Feature();
+  accuracyFeature.bindTo('geometry', geolocation, 'accuracyGeometry');
+
+  var positionFeature = new ol.Feature();
+  positionFeature.bindTo('geometry', geolocation, 'position')
+    .transform(function() {}, function(coordinates) {
+      return coordinates ? new ol.geom.Point(coordinates) : null;
+    });
+
+  var featuresOverlay = new ol.FeatureOverlay({
+  map: map,
+  features: [accuracyFeature, positionFeature]
+});
  });
 }
  SetUserLocation();
