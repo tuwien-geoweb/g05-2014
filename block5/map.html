@@ -20,7 +20,9 @@ width: 100%;
 <div class="row">
 <div class="col-md-4">
 <h2>Openlayer 3 Kartenbeispiel</h2>
-<p>Die Kartenansicht zeigt die Standorte der drei Gruppenmitglieder.</p>
+<form id="search">
+  Search: <input name="query" type="text" size="40">
+</form>
 </div>
 <div class="col-md-8">
 <div id="map" class="map"></div>
@@ -33,7 +35,7 @@ source: new ol.source.MapQuest({layer: 'osm'})
 }),
 ],
 view: new ol.View({
-center: ol.proj.transform([16.36, 48.20], 'EPSG:4326', 'EPSG:3857'),
+center: ol.proj.transform([16.3, 48.2], 'EPSG:4326', 'EPSG:3857'),
 zoom: 11
 })
 });
@@ -46,8 +48,20 @@ geolocation.on('change:position', function() {
   geolocation.setTracking(false);
   map.getView().setCenter(geolocation.getPosition());
  });
+ 
+ var form = document.getElementById("search");
+ 
+ form.onsubmit = function() {
+   var url = 'http://nominatim.openstreetmap.org/search?format=json&q=' + form.query.value;
+   var xhr = new XMLHttpRequest();
+   xhr.open("GET", url, true);
+   xhr.onload = function() {
+    var result = JSON.parse(xhr.responseText);
+    var position = /** @type {ol.coordinate} */ [result[0].lon, result[0].lat];
+    map.getView().setCenter(ol.proj.transform(position, 'EPSG:4326', 'EPSG:3857'))
+};
+xhr.send();
+}
 </script>
-</div>
-</div>
 </body>
 </html>
