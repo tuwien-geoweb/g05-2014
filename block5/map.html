@@ -58,7 +58,7 @@ geolocation.on('change', function() {
   geolocation.setTracking(false);
   // map.getView().setCenter(geolocation.getPosition());
   // Anhand der Accuracy-Geometry wird der Map-View angepasst.
-  map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), nearest=true);
+  map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), { nearest=true });
   marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
   console.log("Geometry Accuracy: " + geolocation.getAccuracy() + " m");
  });
