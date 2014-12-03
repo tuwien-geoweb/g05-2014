@@ -3,6 +3,7 @@
 <head>
 <link rel="stylesheet" href="http://openlayers.org/en/v3.0.0/css/ol.css" type="text/css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 <style>
 .map {
 height: 100%;
@@ -57,7 +58,7 @@ geolocation.on('change', function() {
   geolocation.setTracking(false);
   // map.getView().setCenter(geolocation.getPosition());
   // Anhand der Accuracy-Geometry wird der Map-View angepasst.
-  map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize());
+  map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), nearest=true);
   marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
   console.log("Geometry Accuracy: " + geolocation.getAccuracy() + " m");
  });
