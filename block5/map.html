@@ -56,10 +56,10 @@ geolocation.setTracking(true); // here the browser may ask for confirmation
 geolocation.on('change', function() {
   geolocation.setTracking(false);
   // map.getView().setCenter(geolocation.getPosition());
-  marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
-  console.log("Geometry Accuracy: " + geolocation.getAccuracy());
   // Anhand der Accuracy-Geometry wird der Map-View angepasst.
   map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize());
+  marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
+  console.log("Geometry Accuracy: " + geolocation.getAccuracy() + " m");
  });
 }
  SetUserLocation();
