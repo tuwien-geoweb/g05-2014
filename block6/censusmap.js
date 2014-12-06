@@ -59,6 +59,10 @@ olMap.on('singleclick', function(evt) {
   $('#popup')
     .popover({content: function() { return $('#popup-content').html(); }})
     .popover('show');
+  // Close popup when user clicks on the 'x'
+  $('.popover-title').click(function() {
+    $('#popup').popover('hide');
+  });
   
   $('.popover form')[0].onsubmit = function(e) {
     var feature = new ol.Feature();
@@ -81,10 +85,6 @@ olMap.on('singleclick', function(evt) {
   
 });
 
-// Close popup when user clicks on the 'x'
-  $('.popover-title').click(function() {
-    $('#popup').popover('hide');
-  });
 
 // Submit query to Nominatim and zoom map to the result's extent
 var form = document.forms[0];
