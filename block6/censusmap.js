@@ -78,7 +78,7 @@ olMap.on('singleclick', function(evt) {
     xhr.onload = function() {
       wmsLayer.getSource().updateParams({});
       alert('Vielen Dank für Ihren Kommentar.');
-      alert(xhr.ResponseText);
+      alert(xhr.responseText);
     };
     xhr.send(new XMLSerializer().serializeToString(xml));
     e.preventDefault();
