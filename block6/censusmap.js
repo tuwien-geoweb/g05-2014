@@ -18,10 +18,7 @@ olMap = new ol.Map({
   view: new ol.View({
     center: [-10764594.0, 4523072.0],
     zoom: 5,
-    view: new ol.View({
-  center: [-10764594.0, 4523072.0],
-  zoom: 5,
-  maxZoom: 18
+    maxZoom: 18
     })
   })
 });
@@ -77,7 +74,7 @@ olMap.on('singleclick', function(evt) {
     xhr.open('POST', 'http://student.ifip.tuwien.ac.at/geoserver/wfs', true);
     xhr.onload = function() {
       wmsLayer.getSource().updateParams({});
-      alert('Thanks for your comment.');
+      alert('Vielen Dank für Ihren Kommentar.');
     };
     xhr.send(new XMLSerializer().serializeToString(xml));
     e.preventDefault();
