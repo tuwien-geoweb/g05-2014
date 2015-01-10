@@ -1,10 +1,10 @@
 // Enthält alle JS-relevanten Anteile des Projekt Wohnstandortanalyse Wien
 // Geoweb Gruppe 05 - WS2014
 
-// Base map
-var osmLayer = new ol.layer.Tile({source: new ol.source.MapQuest({layer: 'osm'})});
+// Grundkarte
+var osmLayer = new ol.layer.Tile({style: 'Road', source: new ol.source.MapQuest({layer: 'osm'})});
 
-// Census map layer
+// Kartendaten für Wien
 var wmsLayer = new ol.layer.Image({
   source: new ol.source.ImageWMS({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
