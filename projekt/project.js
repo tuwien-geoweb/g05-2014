@@ -2,7 +2,7 @@
 // Geoweb Gruppe 05 - WS2014
 
 // Base map
-var osmLayer = new ol.layer.Tile({source: new ol.source.OSM()});
+var osmLayer = new ol.layer.Tile({source: new ol.source.MapQuest({layer: 'osm'})});
 
 // Census map layer
 var wmsLayer = new ol.layer.Image({
