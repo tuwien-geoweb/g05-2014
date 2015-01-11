@@ -64,6 +64,13 @@ var Parkzonen = new ol.layer.Tile({
   	})
 });
 
+var Tempo30 = new ol.layer.Tile({
+  	source: new ol.source.TileWMS({
+	  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+	  params: {VERSION: '1.1.0', LAYERS: 'g05_2014:TEMPOZONEOGDPolygon', TRANSPARENT: true, FORMAT: 'image/png'}
+  	})
+});
+
 
 // Umwandlung in eine Funktion, die auch durch den Button "Zurücksetzen" aufgerufen werden kann.
 function SetUserLocation() {
@@ -210,6 +217,19 @@ document.getElementById('Parkpickerl').onclick = function(e){
   else
   {
     olMap.removeLayer(Parkzonen);
+    console.log("Removed Parkpickerl-Layer.");
+  }
+};
+
+document.getElementById('Tempo30').onclick = function(e){
+  if(this.checked == true)
+  {
+    olMap.addLayer(Tempo30);
+    console.log("Added Parkpickerl-Layer.");
+  }
+  else
+  {
+    olMap.removeLayer(Tempo30);
     console.log("Removed Parkpickerl-Layer.");
   }
 };
