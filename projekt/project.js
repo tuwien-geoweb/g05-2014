@@ -26,6 +26,7 @@ olMap = new ol.Map({
 });
 
 // Integration der Checkbox-gesteuerten Layer CarSharing, Haltestellen, Märkte, Parkzonen und Tempo30-Zone
+// Die Umsetzung der Checkbox-Steuerung erfolgt unten.
 var Haltestellen = new ol.layer.Vector({
   source: new ol.source.GeoJSON({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/g05_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g05_2014:HALTESTELLEWLOGDPoint&outputFormat=json',
@@ -35,13 +36,6 @@ var Haltestellen = new ol.layer.Vector({
        image: new ol.style.Icon({src: 'http://data.wien.gv.at/katalog/images/haltestellewlogd.png',})
     })
 });
-document.getElementById('Haltestellen').onclick = function(e){
-  if(this.checked==true){
-    olMap.addLayer(Haltestellen);
-  }else{
-    olMap.removeLayer(Haltestellen);
-  }
-};
 
 
 // Umwandlung in eine Funktion, die auch durch den Button "Zurücksetzen" aufgerufen werden kann.
@@ -119,6 +113,13 @@ olMap.on('singleclick', function(evt) {
   
 });
 
+document.getElementById('Haltestellen').onclick = function(e){
+  if(this.checked==true){
+    olMap.addLayer(Haltestellen);
+  }else{
+    olMap.removeLayer(Haltestellen);
+  }
+};
 
 // Submit query to Nominatim and zoom map to the result's extent
 var form = document.forms[0];
