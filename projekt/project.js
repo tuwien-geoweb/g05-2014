@@ -33,7 +33,7 @@ var CarSharing = new ol.layer.Vector({
     projection: 'EPSG:3857'
   }),
     style: new ol.style.Style({
-       image: new ol.style.Icon({src: 'http://data.wien.gv.at/katalog/images/carsharingogd.png', })
+       image: new ol.style.Icon({src: 'http://student.ifip.tuwien.ac.at/geoweb/2014/g05/page/img/carsharingogd.png', })
     })
 });
 
@@ -43,7 +43,7 @@ var Haltestellen = new ol.layer.Vector({
     projection: 'EPSG:3857'
   }),
     style: new ol.style.Style({
-       image: new ol.style.Icon({src: 'http://data.wien.gv.at/katalog/images/haltestellewlogd.png',})
+       image: new ol.style.Icon({src: 'http://student.ifip.tuwien.ac.at/geoweb/2014/g05/page/img/haltestellewlogd.png',})
     })
 });
 
@@ -53,7 +53,7 @@ var Maerkte = new ol.layer.Vector({
     projection: 'EPSG:3857'
   }),
     style: new ol.style.Style({
-       image: new ol.style.Icon({src: 'http://data.wien.gv.at/katalog/images/marktogd.png',})
+       image: new ol.style.Icon({src: 'http://student.ifip.tuwien.ac.at/geoweb/2014/g05/page/img/marktogd.png',})
     })
 });
 
