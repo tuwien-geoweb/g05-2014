@@ -35,7 +35,7 @@ var CarSharing = new ol.layer.Vector({
     style: new ol.style.Style({
     	symbolizers: [
        		new ol.style.Icon({
-       			url: 'http://data.wien.gv.at/katalog/images/carsharingogd.png',
+       			url: 'http://data.wien.gv.at/katalog/images/carsharingogd.png'
        		})
        		]
     })
