@@ -13,7 +13,7 @@ var wmsLayer = new ol.layer.Image({
   opacity: 0.6
 });
 
-// OL3 Kartenobjekt
+// OL3 Kartenobjekt (Gesamt)
 olMap = new ol.Map({
   target: 'map',
   renderer: 'canvas',
@@ -24,6 +24,25 @@ olMap = new ol.Map({
     maxZoom: 19
   })
 });
+
+// Integration der Checkbox-gesteuerten Layer CarSharing, Haltestellen, Märkte, Parkzonen und Tempo30-Zone
+var Haltestellen = new ol.layer.Vector({
+  source: new ol.source.GeoJSON({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/g05_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g05_2014:HALTESTELLEWLOGDPoint&outputFormat=json',
+    projection: 'EPSG:3857'
+  }),
+    style: new ol.style.Style({
+       image: new ol.style.Icon({src: 'http://data.wien.gv.at/katalog/images/haltestellewlogd.png',})
+    })
+});
+document.getElementById('Haltestellen').onclick = function(e){
+  if(this.checked==true){
+    olMap.addLayer(Haltestellen);
+  }else{
+    olMap.removeLayer(Haltestellen);
+  }
+};
+
 
 // Umwandlung in eine Funktion, die auch durch den Button "Zurücksetzen" aufgerufen werden kann.
 function SetUserLocation() {
