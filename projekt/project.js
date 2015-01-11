@@ -34,7 +34,7 @@ var CarSharing = new ol.layer.Vector({
     projection: 'EPSG:3857'
   }),
     style: new ol.style.Style({
-       image: new ol.style.Icon({src: 'http://data.wien.gv.at/katalog/images/carsharingogd.png', iconSize,})
+       image: new ol.style.Icon({src: 'http://data.wien.gv.at/katalog/images/carsharingogd.png', iconSize})
     })
 });
 
