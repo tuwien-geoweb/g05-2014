@@ -114,7 +114,7 @@ olMap.on('singleclick', function(evt) {
 });
 
 document.getElementById('Haltestellen').onclick = function(e){
-  if(this.checked==true){
+  if(this.checked == 1){
     olMap.addLayer(Haltestellen);
   }else{
     olMap.removeLayer(Haltestellen);
