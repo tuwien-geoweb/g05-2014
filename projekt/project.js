@@ -57,13 +57,10 @@ var Maerkte = new ol.layer.Vector({
     })
 });
 
-var Parkzonen = new ol.layer.Vector({
-  source: new ol.source.GeoJSON({
-    url: 'http://student.ifip.tuwien.ac.at/geoserver/g05_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g05_2014:PARKENGELTUNGOGDPolygon&outputFormat=json',
-    projection: 'EPSG:3857'
-  }),
-    style: new ol.style.Style({
-    })
+var Parkzonen = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+	  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+	  params: {VERSION: '1.1.1', LAYERS: 'g05_2014:PARKENGELTUNGOGDPolygon', TRANSPARENT: true, FORMAT: 'image/png'}
 });
 
 
