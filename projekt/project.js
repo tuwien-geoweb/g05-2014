@@ -57,6 +57,15 @@ var Maerkte = new ol.layer.Vector({
     })
 });
 
+var Parkzonen = new ol.layer.Vector({
+  source: new ol.source.GeoJSON({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/g05_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g05_2014:PARKENGELTUNGOGDPolygon&outputFormat=json',
+    projection: 'EPSG:3857'
+  }),
+    style: new ol.style.Style({
+    })
+});
+
 
 // Umwandlung in eine Funktion, die auch durch den Button "Zurücksetzen" aufgerufen werden kann.
 function SetUserLocation() {
@@ -185,5 +194,16 @@ document.getElementById('Maerkte').onclick = function(e){
   else
   {
     olMap.removeLayer(Maerkte);
+  }
+};
+
+document.getElementById('Parkzonen').onclick = function(e){
+  if(this.checked == true)
+  {
+    olMap.addLayer(Parkzonen);
+  }
+  else
+  {
+    olMap.removeLayer(Parkzonen);
   }
 };
