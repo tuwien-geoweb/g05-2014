@@ -110,16 +110,9 @@ olMap.on('singleclick', function(evt) {
     xhr.send(new XMLSerializer().serializeToString(xml));
     e.preventDefault();
   };
-  
 });
 
-document.getElementById('Haltestellen').onclick = function(e){
-  if(this.checked == 1){
-    olMap.addLayer(Haltestellen);
-  }else{
-    olMap.removeLayer(Haltestellen);
-  }
-};
+
 
 // Submit query to Nominatim and zoom map to the result's extent
 var form = document.forms[0];
@@ -139,4 +132,13 @@ form.onsubmit = function(evt) {
   };
   xhr.send();
   evt.preventDefault();
+};
+
+// Integration der Checkbox-Funktionalitäten
+document.getElementById('Haltestellen').onclick = function(e){
+  if(this.checked == 1){
+    olMap.addLayer(Haltestellen);
+  }else{
+    olMap.removeLayer(Haltestellen);
+  }
 };
