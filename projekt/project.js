@@ -13,7 +13,7 @@ var wmsLayer = new ol.layer.Image({
   opacity: 0.6
 });
 
-// Map object
+// OL3 Kartenobjekt
 olMap = new ol.Map({
   target: 'map',
   renderer: 'canvas',
@@ -28,6 +28,21 @@ olMap = new ol.Map({
     })
   })
 });
+
+// Umwandlung in eine Funktion, die auch durch den Button "Zurücksetzen" aufgerufen werden kann.
+function SetUserLocation() {
+var geolocation = new ol.Geolocation({projection: 'EPSG:3857'});
+geolocation.setTracking(true); // here the browser may ask for confirmation
+geolocation.on('change', function() {
+  geolocation.setTracking(false);
+  // map.getView().setCenter(geolocation.getPosition());
+  // Anhand der Accuracy-Geometry wird der Map-View angepasst.
+  map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), { nearest: true, maxZoom: 19 });
+  marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
+  console.log("Geometry Accuracy: " + geolocation.getAccuracy() + " m");
+ });
+}
+ SetUserLocation();
 
 // Load variables into dropdown
 $.get("data/datalist.txt", function(response) {
