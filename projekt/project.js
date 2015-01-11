@@ -22,7 +22,6 @@ olMap = new ol.Map({
     center: ol.proj.transform([16.3, 48.2], 'EPSG:4326', 'EPSG:3857'),
     zoom: 11,
     maxZoom: 19
-})
   })
 });
 
