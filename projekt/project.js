@@ -197,7 +197,7 @@ document.getElementById('Maerkte').onclick = function(e){
   }
 };
 
-document.getElementById('Parkzonen').onclick = function(e){
+document.getElementById('Parkpickerl').onclick = function(e){
   if(this.checked == true)
   {
     olMap.addLayer(Parkzonen);
