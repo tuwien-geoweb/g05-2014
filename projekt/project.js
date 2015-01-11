@@ -58,9 +58,9 @@ var Maerkte = new ol.layer.Vector({
 });
 
 var Parkzonen = new ol.layer.Tile({
-  source: new ol.source.TileWMS({
+  	source: new ol.source.TileWMS({
 	  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
-	  params: {VERSION: '1.1.1', LAYERS: 'g05_2014:PARKENGELTUNGOGDPolygon', TRANSPARENT: true, FORMAT: 'image/png'}
+	  params: {VERSION: '1.1.0', LAYERS: 'g05_2014:PARKENGELTUNGOGDPolygon', TRANSPARENT: true, FORMAT: 'image/png'}
 });
 
 
