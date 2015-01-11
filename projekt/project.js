@@ -168,10 +168,12 @@ document.getElementById('CarSharing').onclick = function(e){
   if(this.checked == true)
   {
     olMap.addLayer(CarSharing);
+    console.log("Added CarSharing-Layer.");
   }
   else
   {
     olMap.removeLayer(CarSharing);
+    console.log("Removed CarSharing-Layer.");
   }
 };
 
@@ -179,10 +181,12 @@ document.getElementById('Haltestellen').onclick = function(e){
   if(this.checked == true)
   {
     olMap.addLayer(Haltestellen);
+    console.log("Added Haltestellen-Layer.");
   }
   else
   {
     olMap.removeLayer(Haltestellen);
+    console.log("Removed Haltestellen-Layer.");
   }
 };
 
@@ -190,10 +194,12 @@ document.getElementById('Maerkte').onclick = function(e){
   if(this.checked == true)
   {
     olMap.addLayer(Maerkte);
+    console.log("Added Märkte-Layer.");
   }
   else
   {
     olMap.removeLayer(Maerkte);
+    console.log("Removed Märkte-Layer.");
   }
 };
 
@@ -201,9 +207,11 @@ document.getElementById('Parkpickerl').onclick = function(e){
   if(this.checked == true)
   {
     olMap.addLayer(Parkzonen);
+    console.log("Added Parkpickerl-Layer.");
   }
   else
   {
     olMap.removeLayer(Parkzonen);
+    console.log("Removed Parkpickerl-Layer.");
   }
 };
