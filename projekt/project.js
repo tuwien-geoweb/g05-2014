@@ -156,25 +156,34 @@ form.onsubmit = function(evt) {
 
 // Integration der Checkbox-Funktionalitäten
 document.getElementById('CarSharing').onclick = function(e){
-  if(this.checked == 1){
+  if(this.checked == true)
+  {
     olMap.addLayer(CarSharing);
-  }else{
+  }
+  else
+  {
     olMap.removeLayer(CarSharing);
   }
 };
 
 document.getElementById('Haltestellen').onclick = function(e){
-  if(this.checked == 1){
+  if(this.checked == true)
+  {
     olMap.addLayer(Haltestellen);
-  }else{
+  }
+  else
+  {
     olMap.removeLayer(Haltestellen);
   }
 };
 
 document.getElementById('Maerkte').onclick = function(e){
-  if(this.checked == 1){
+  if(this.checked == true)
+  {
     olMap.addLayer(Maerkte);
-  }else{
+  }
+  else
+  {
     olMap.removeLayer(Maerkte);
   }
 };
