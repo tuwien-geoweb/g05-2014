@@ -27,14 +27,14 @@ olMap = new ol.Map({
 
 // Integration der Checkbox-gesteuerten Layer CarSharing, Haltestellen, Märkte, Parkzonen und Tempo30-Zone
 // Die Umsetzung der Checkbox-Steuerung erfolgt unten.
-var iconSize =  new OpenLayers.Size(15,15);
 var CarSharing = new ol.layer.Vector({
   source: new ol.source.GeoJSON({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/g05_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g05_2014:CARSHARINGOGDPoint&outputFormat=json',
     projection: 'EPSG:3857'
   }),
     style: new ol.style.Style({
-       image: new ol.style.Icon({src: 'http://data.wien.gv.at/katalog/images/carsharingogd.png', iconSize})
+       image: new ol.style.Icon({src: 'http://data.wien.gv.at/katalog/images/carsharingogd.png',})
+       size: [16, 16],
     })
 });
 
