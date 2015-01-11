@@ -47,6 +47,16 @@ var Haltestellen = new ol.layer.Vector({
     })
 });
 
+var Maerkte = new ol.layer.Vector({
+  source: new ol.source.GeoJSON({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/g05_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g05_2014:MAERKTEOGDPoint&outputFormat=json',
+    projection: 'EPSG:3857'
+  }),
+    style: new ol.style.Style({
+       image: new ol.style.Icon({src: 'http://data.wien.gv.at/katalog/images/marktogd.png',})
+    })
+});
+
 
 // Umwandlung in eine Funktion, die auch durch den Button "Zurücksetzen" aufgerufen werden kann.
 function SetUserLocation() {
@@ -158,5 +168,13 @@ document.getElementById('Haltestellen').onclick = function(e){
     olMap.addLayer(Haltestellen);
   }else{
     olMap.removeLayer(Haltestellen);
+  }
+};
+
+document.getElementById('Maerkte').onclick = function(e){
+  if(this.checked == 1){
+    olMap.addLayer(Maerkte);
+  }else{
+    olMap.removeLayer(Maerkte);
   }
 };
