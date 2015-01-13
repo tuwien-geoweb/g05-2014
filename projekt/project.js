@@ -155,14 +155,16 @@ form.onsubmit = function(evt) {
   url += form.query.value + '&countrycodes=at';
   var xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
-  xhr.onload = function() {
+   xhr.onload = function() {
     var result = JSON.parse(xhr.responseText);
-    if (result.length > 0) {
-      var bbox = result[0].boundingbox;
-      olMap.getView().fitExtent(ol.proj.transform([parseFloat(bbox[2]),
-          parseFloat(bbox[0]), parseFloat(bbox[3]), parseFloat(bbox[1])],
-          'EPSG:4326', 'EPSG:3857'), olMap.getSize());
-    }
+    var bbox = result[0].boundingbox; // Task: Die Kartenansicht zoomt auf die BoundingBox des Suchergebnisses.
+    var extent = /** @type {ol.Extent} */ [
+      parseFloat(bbox[2]), parseFloat(bbox[0]), 
+      parseFloat(bbox[3]), parseFloat(bbox[1])
+      ];
+      form.elements["query"].value = result[0].display_name;
+    console.log(result[0].display_name);
+    map.getView().fitExtent(ol.proj.transformExtent(extent, 'EPSG:4326', 'EPSG:3857'), map.getSize());
   };
   xhr.send();
   evt.preventDefault();
