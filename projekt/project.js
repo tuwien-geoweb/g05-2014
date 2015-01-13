@@ -8,7 +8,7 @@ var osmLayer = new ol.layer.Tile({style: 'Road', source: new ol.source.MapQuest(
 var wmsLayer = new ol.layer.Image({
   source: new ol.source.ImageWMS({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
-    params: {'LAYERS': 'g05_2014:censuswien,g05_2014:comments'}
+    params: {'LAYERS': 'g05_2014:normalizedvienna,g05_2014:comments'}
   }),
   opacity: 0.6
 });
