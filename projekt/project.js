@@ -152,7 +152,7 @@ olMap.on('singleclick', function(evt) {
 var form = document.forms[0];
 form.onsubmit = function(evt) {
   var url = 'http://nominatim.openstreetmap.org/search?format=json&q=';
-  url += form.query.value;
+  url += form.query.value + '&countrycodes=at';
   var xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
   xhr.onload = function() {
