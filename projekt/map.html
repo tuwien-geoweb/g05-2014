@@ -71,34 +71,33 @@
     </nav>
     
     <div class="row">
-    <div class="col-md-8">.col-md-8</div>
-    <div class="col-md-4">.col-md-4</div>
-    </div>
-    
-      <div id="map">
-      <!-- GetLegendGraphic, customized with some LEGEND_OPTIONS -->
-      <img class="legend img-rounded" src="http://student.ifip.tuwien.ac.at/geoserver/g05_2014/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=26&HEIGHT=18&STRICT=false&style=g05_2014_stddev&LEGEND_OPTIONS=fontName:Arial;fontSize:11;fontAntiAliasing:true;fontStyle:bold;fontColor:0xFFFFFF;bgColor:0x000000">
-      <div id="popup" data-html="true" data-placement="auto" data-title="&times;">
-        <div id="popup-content" style="display:none">
-          <iframe seamless></iframe>
-          <form class="input-group">
-        <input type="text" class="form-control" name="comment">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="submit">Comment</button>
-        </span>
-      </form>
+      <div class="col-md-8">.col-md-8
+        <div id="map">
+        <!-- GetLegendGraphic, customized with some LEGEND_OPTIONS -->
+        <img class="legend img-rounded" src="http://student.ifip.tuwien.ac.at/geoserver/g05_2014/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=26&HEIGHT=18&STRICT=false&style=g05_2014_stddev&LEGEND_OPTIONS=fontName:Arial;fontSize:11;fontAntiAliasing:true;fontStyle:bold;fontColor:0xFFFFFF;bgColor:0x000000">
+        <div id="popup" data-html="true" data-placement="auto" data-title="&times;">
+          <div id="popup-content" style="display:none">
+            <iframe seamless></iframe>
+            <form class="input-group">
+          <input type="text" class="form-control" name="comment">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">Comment</button>
+          </span>
+        </form>
+          </div>
         </div>
       </div>
+      </div>
+      <div class="col-md-4">.col-md-4
+        <p>
+        <div class="checkbox"><label><input type="checkbox" id="CarSharing"> <img src="http://student.ifip.tuwien.ac.at/geoweb/2014/g05/page/img/carsharingogd.png" hight="15" width="15"> CarSharing-Standorte</label></div>
+        <div class="checkbox"><label><input type="checkbox" id="Haltestellen"> <img src="http://student.ifip.tuwien.ac.at/geoweb/2014/g05/page/img/haltestellewlogd.png" hight="15" width="15"> Haltestellen</label></div>
+        <div class="checkbox"><label><input type="checkbox" id="Maerkte"> <img src="http://student.ifip.tuwien.ac.at/geoweb/2014/g05/page/img/marktogd.png" hight="15" width="15"> Märkte</label></div>
+        <div class="checkbox"><label><input type="checkbox" id="Parkpickerl"> Parkpickerl-Zonen</label></div>
+        <div class="checkbox"><label><input type="checkbox" id="Tempo30"> Tempo30-Zonen</label></div>
+        </p>
+      </div>
     </div>
-    
-    <br><br><br>
-    <p>
-    <div class="checkbox"><label><input type="checkbox" id="CarSharing"> <img src="http://student.ifip.tuwien.ac.at/geoweb/2014/g05/page/img/carsharingogd.png" hight="15" width="15"> CarSharing-Standorte</label></div>
-    <div class="checkbox"><label><input type="checkbox" id="Haltestellen"> <img src="http://student.ifip.tuwien.ac.at/geoweb/2014/g05/page/img/haltestellewlogd.png" hight="15" width="15"> Haltestellen</label></div>
-    <div class="checkbox"><label><input type="checkbox" id="Maerkte"> <img src="http://student.ifip.tuwien.ac.at/geoweb/2014/g05/page/img/marktogd.png" hight="15" width="15"> Märkte</label></div>
-    <div class="checkbox"><label><input type="checkbox" id="Parkpickerl"> Parkpickerl-Zonen</label></div>
-    <div class="checkbox"><label><input type="checkbox" id="Tempo30"> Tempo30-Zonen</label></div>
-    </p>
     <script type="text/javascript" src="project.js"></script>
   </body>
 </html>
