@@ -1,4 +1,5 @@
 Data_Item                                             Item_Description
+SHNO_DATA Bitte auswählen
 POP_TOTAL Bezirksbevölkerung
 POP_DENSI Bevölkerungsdichte
 RATE_MALE  Anteil Männer
