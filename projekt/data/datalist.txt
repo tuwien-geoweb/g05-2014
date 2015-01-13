@@ -7,3 +7,4 @@ AVG_AGE_M Altersdurchschnitt Männlich
 AVG_AGE_F Altersdurchschnitt Weiblich
 YOU_RATIO Anteil Personen bis 19 Jahren
 AGE_RATIO Anteil Personen ab 65 Jahren
+BEZI_LAGE Zentrale/Periphere Bezirke
