@@ -1,5 +1,4 @@
 Data_Item                                             Item_Description
-
 POP_TOTAL Bezirksbevölkerung
 POP_DENSI Bevölkerungsdichte
 RATE_MALE  Anteil Männer
